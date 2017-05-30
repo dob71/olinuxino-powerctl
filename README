@@ -1,0 +1,13 @@
+
+Install hostapd and dnsmasq
+https://www.olimex.com/forum/index.php?topic=1635.0
+
+Set up the init script
+ln -s /ups/init.d/powerctl /etc/init.d/powerctl
+update-rc.d powerctl defaults
+
+Add user "admin" and set /usb/control as its shell in /etc/passwd.
+
+Edit /etc/inittab to respawn getty with admin login instead of root on ttyS0
+T0:2345:respawn:/sbin/getty -L -a admin ttyS0 115200 linux
+

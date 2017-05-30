@@ -1,0 +1,14 @@
+auto lo
+iface lo inet loopback
+
+#auto eth1 
+#iface eth1 inet dhcp
+#address 192.168.0.243 
+#netmask 255.255.255.0
+#gateway 192.168.0.1 
+
+auto __WLAN__
+iface __WLAN__ inet dhcp
+wpa-ssid __SSID__
+wpa-psk __PASS__
+
