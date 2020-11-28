@@ -1,6 +1,14 @@
+Start with the pre-built image referenced here:
+https://github.com/OLIMEX/OLINUXINO/blob/master/SOFTWARE/A13/A13-build/A13_olinuxino_Debian_kernel_3.4.90%2B_image_description.txt
+
+The image file name is:
+A13_debian_34_90_WIFI_RALINK_GCC_GPIO_X_I2C_100KHz_UVC_TS_FTDI_3G_video_accell_release_10.img
+It's big (almost 4GB), so torrenting it is the best option.
 
 Install hostapd and dnsmasq
 https://www.olimex.com/forum/index.php?topic=1635.0
+
+Pull (using GIT) or download and extract files from this repo into /ups folder on the board.
 
 Set up the init script
 ln -s /ups/init.d/powerctl /etc/init.d/powerctl
@@ -11,3 +19,5 @@ Add user "admin" and set /usb/control as its shell in /etc/passwd.
 Edit /etc/inittab to respawn getty with admin login instead of root on ttyS0
 T0:2345:respawn:/sbin/getty -L -a admin ttyS0 115200 linux
 
+See a post here for more details:
+https://www.okob.net/wp/index.php/2020/11/28/converting-old-ups-to-power-control-box/
